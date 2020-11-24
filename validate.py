@@ -28,7 +28,7 @@ def json_file_validation(file_name):
                 return False, messages
 
         except json.decoder.JSONDecodeError as error:
-            messages.append("Invalid JSON, needs to be corrected: %s" % error)
+            messages.append("Invalid JSON, needs to be corrected:\n %s" % error)
             return False, messages
 
     schema_name = json_object.get("event")

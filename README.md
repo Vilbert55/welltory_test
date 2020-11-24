@@ -109,7 +109,8 @@ Required key 'unique_id' is missing, the required keys are:
 ================================
 
 Validate 'test.json'
-Invalid JSON, needs to be corrected: Expecting property name enclosed in double quotes: line 1 column 29 (char 28)
+Invalid JSON, needs to be corrected:
+ Expecting property name enclosed in double quotes: line 1 column 29 (char 28)
 
 ================================
 
