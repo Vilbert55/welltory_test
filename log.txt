@@ -1,8 +1,3 @@
-# welltory_test
-
-Результат работы скрипта записывается в файл log.txt:
-
-```
 Validate 'c72d21cf-1152-4d8e-b649-e198149d5bbb.json'
 No such schema with name 'meditation_created', check the key 'event' value
 
@@ -123,4 +118,4 @@ ERRORS:
 Invalid data type in key 'user_id', data type expected 'integer'
 
 ================================
-```
+
