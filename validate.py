@@ -28,10 +28,16 @@ def json_file_validation(file_name):
             return False, messages
 
     schema_name = json_object.get("event")
+    data = json_object.get("data")
 
     if not schema_name:
         messages.append(
-            "required key 'event' is missing, check the key in the JSON file")
+            "Required key 'event' is missing, check the key in the JSON file")
+    if not data:
+        messages.append(
+            "Required key 'data' is missing, check the key in the JSON file")
+
+    if not (schema_name and data):
         return False, messages
 
     try:
@@ -43,7 +49,8 @@ def json_file_validation(file_name):
         return False, messages
 
     validator = Draft7Validator(schema_obj)
-    if validator.is_valid(json_object["data"]):
+
+    if validator.is_valid(data):
         messages.append("Validate successful!")
         return True, messages
     else:
@@ -69,7 +76,8 @@ if __name__ == "__main__":
             data.append(messages)
             if not result:
                 err_count += 1
-        print(f"Total: {count}, Fails: {err_count}, Passed: {count - err_count}\n", file=f)
+        print(
+            f"Total: {count}, Fails: {err_count}, Passed: {count - err_count}\n", file=f)
         for file_msgs in data:
             for msg in file_msgs:
                 print(msg, file=f)

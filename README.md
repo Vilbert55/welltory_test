@@ -55,10 +55,7 @@ Invalid data type in key 'cmarkers', data type expected 'array'
 ================================
 
 Validate 'cc07e442-7986-4714-8fc2-ac2256690a90.json'
-ERRORS:
----------------
-None is not of type 'object'
-Invalid data type in key '', data type expected 'object'
+Required key 'data' is missing, check the key in the JSON file
 
 ================================
 
@@ -90,7 +87,8 @@ No such schema with name 'label_       selected', check the key 'event' value
 ================================
 
 Validate 'a95d845c-8d9e-4e07-8948-275167643a40.json'
-required key 'event' is missing, check the key in the JSON file
+Required key 'event' is missing, check the key in the JSON file
+Required key 'data' is missing, check the key in the JSON file
 
 ================================
 
