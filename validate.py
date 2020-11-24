@@ -23,6 +23,10 @@ def json_file_validation(file_name):
             if not isinstance(json_object, dict):
                 messages.append(f"File '{file_name}' is not JSON-file")
                 return False, messages
+            if not json_object:
+                messages.append(f"File '{file_name}' is empty")
+                return False, messages
+
         except json.decoder.JSONDecodeError as error:
             messages.append("Invalid JSON, needs to be corrected: %s" % error)
             return False, messages

@@ -69,8 +69,7 @@ No such schema with name 'label_       selected', check the key 'event' value
 ================================
 
 Validate 'a95d845c-8d9e-4e07-8948-275167643a40.json'
-Required key 'event' is missing, check the key in the JSON file
-Required key 'data' is missing, check the key in the JSON file
+File 'a95d845c-8d9e-4e07-8948-275167643a40.json' is empty
 
 ================================
 
@@ -88,6 +87,11 @@ ERRORS:
 'unique_id' is a required property
 Required key 'unique_id' is missing, the required keys are:
 ['source', 'timestamp', 'finish_time', 'activity_type', 'time_start', 'unique_id']
+
+================================
+
+Validate 'test.json'
+Invalid JSON, needs to be corrected: Expecting property name enclosed in double quotes: line 1 column 29 (char 28)
 
 ================================
 
@@ -110,11 +114,6 @@ Required key 'type' is missing, the required keys are:
 'type' is a required property
 Required key 'type' is missing, the required keys are:
 ['date', 'type']
-
-================================
-
-Validate 'm.json'
-File 'm.json' is not JSON-file
 
 ================================
 
