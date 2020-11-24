@@ -1,8 +1,23 @@
 # welltory_test
 
+Скрипт находит ошибки структуры и данных в JSON файлах в папке *event*
+
+## Запуск
+
+Установить зависимости
+```
+pip install -r requirements.txt
+```
+Запустить
+```
+python3 validate.py
+```
+
 Результат работы скрипта записывается в файл log.txt:
 
 ```
+Total: 17, Fails: 15, Passed: 2
+
 Validate 'c72d21cf-1152-4d8e-b649-e198149d5bbb.json'
 No such schema with name 'meditation_created', check the key 'event' value
 

@@ -22,17 +22,17 @@ def json_file_validation(file_name):
             json_object = json.load(myjson)
             if not isinstance(json_object, dict):
                 messages.append(f"File '{file_name}' is not JSON-file")
-                return messages
+                return False, messages
         except json.decoder.JSONDecodeError as error:
             messages.append("Invalid JSON, needs to be corrected: %s" % error)
-            return messages
+            return False, messages
 
     schema_name = json_object.get("event")
 
     if not schema_name:
         messages.append(
             "required key 'event' is missing, check the key in the JSON file")
-        return messages
+        return False, messages
 
     try:
         with open(f"schema/{schema_name}.schema", "r", encoding="utf-8") as schema:
@@ -40,12 +40,12 @@ def json_file_validation(file_name):
     except FileNotFoundError:
         messages.append(
             f"No such schema with name '{schema_name}', check the key 'event' value")
-        return messages
+        return False, messages
 
     validator = Draft7Validator(schema_obj)
     if validator.is_valid(json_object["data"]):
         messages.append("Validate successful!")
-        return messages
+        return True, messages
     else:
         messages.append("ERRORS:")
 
@@ -55,14 +55,22 @@ def json_file_validation(file_name):
         messages.append(error.message)
         messages.append(help_text(error))
 
-    return messages
+    return False, messages
 
 
 if __name__ == "__main__":
     json_files = os.listdir("event/")
     with open('log.txt', 'w') as f:
+        data = []
+        count = len(json_files)
+        err_count = 0
         for json_file in json_files:
-            result = json_file_validation(json_file)
-            for msg in result:
+            result, messages = json_file_validation(json_file)
+            data.append(messages)
+            if not result:
+                err_count += 1
+        print(f"Total: {count}, Fails: {err_count}, Passed: {count - err_count}\n", file=f)
+        for file_msgs in data:
+            for msg in file_msgs:
                 print(msg, file=f)
             print("\n================================\n", file=f)
