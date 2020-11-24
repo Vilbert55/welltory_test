@@ -10,7 +10,7 @@ def help_text(error):
         return f"Invalid data type in key '{key}', data type expected '{error.validator_value}'"
 
     if error.validator == "required":
-        return f"Required key '{key_obj}' is missing, the required keys are: {error.validator_value}"
+        return f"Required key '{key_obj}' is missing, the required keys are:\n{error.validator_value}"
 
 
 def json_file_validation(file_name):
