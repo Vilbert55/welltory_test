@@ -16,7 +16,7 @@ python3 validate.py
 Результат работы скрипта записывается в файл log.txt:
 
 ```
-Total: 17, Fails: 15, Passed: 2
+Total:17 Fails:15 Passed:2
 
 Validate 'c72d21cf-1152-4d8e-b649-e198149d5bbb.json'
 No such schema with name 'meditation_created', check the key 'event' value
@@ -50,6 +50,7 @@ None is not of type 'integer'
 Invalid data type in key 'user_id', data type expected 'integer'
 ---------------
 'suprt marker' is not of type 'array'
+Instanse: suprt marker
 Invalid data type in key 'cmarkers', data type expected 'array'
 
 ================================
@@ -68,15 +69,18 @@ Validate '1eba2aa1-2acf-460d-91e6-55a8c3e3b7a3.json'
 ERRORS:
 ---------------
 'unique_id' is a required property
-Required key 'unique_id' is missing, the required keys are:
+Instanse: {'id': None, 'rr_id': None, 'labels': [{'slug': 'flu', 'type': 2, 'color': {'color': '#e83e35', 'lab
+Required key 'unique_id' is missing, the required keys are: 
 ['id', 'labels', 'rr_id', 'timestamp', 'unique_id', 'user', 'user_id']
 ---------------
 'user' is a required property
-Required key 'user' is missing, the required keys are:
+Instanse: {'id': None, 'rr_id': None, 'labels': [{'slug': 'flu', 'type': 2, 'color': {'color': '#e83e35', 'lab
+Required key 'user' is missing, the required keys are: 
 ['id', 'labels', 'rr_id', 'timestamp', 'unique_id', 'user', 'user_id']
 ---------------
 'user_id' is a required property
-Required key 'user_id' is missing, the required keys are:
+Instanse: {'id': None, 'rr_id': None, 'labels': [{'slug': 'flu', 'type': 2, 'color': {'color': '#e83e35', 'lab
+Required key 'user_id' is missing, the required keys are: 
 ['id', 'labels', 'rr_id', 'timestamp', 'unique_id', 'user', 'user_id']
 
 ================================
@@ -95,6 +99,7 @@ Validate 'fb1a0854-9535-404d-9bdd-9ec0abb6cd6c.json'
 ERRORS:
 ---------------
 {'id': 8, 'date': '2020-06-27', 'name': 'Сегодня тренировался', 'slug': 'workout_today'} is not of type 'array'
+Instanse: {'id': 8, 'date': '2020-06-27', 'name': 'Сегодня тренировался', 'slug': 'workout_today'}
 Invalid data type in key 'cmarkers', data type expected 'array'
 
 ================================
@@ -103,7 +108,8 @@ Validate 'bb998113-bc02-4cd1-9410-d9ae94f53eb0.json'
 ERRORS:
 ---------------
 'unique_id' is a required property
-Required key 'unique_id' is missing, the required keys are:
+Instanse: {'info': [{'type': 'in_bed_time', 'value': 32880000.0}, {'type': 'sleep_time', 'value': 31320000.0},
+Required key 'unique_id' is missing, the required keys are: 
 ['source', 'timestamp', 'finish_time', 'activity_type', 'time_start', 'unique_id']
 
 ================================
@@ -123,15 +129,18 @@ Validate '297e4dc6-07d1-420d-a5ae-e4aff3aedc19.json'
 ERRORS:
 ---------------
 'type' is a required property
-Required key 'type' is missing, the required keys are:
+Instanse: {'date': '2020-08-27T08:34:00-04:00'}
+Required key 'type' is missing, the required keys are: 
 ['date', 'type']
 ---------------
 'type' is a required property
-Required key 'type' is missing, the required keys are:
+Instanse: {'date': '2020-08-27T09:34:00-04:00'}
+Required key 'type' is missing, the required keys are: 
 ['date', 'type']
 ---------------
 'type' is a required property
-Required key 'type' is missing, the required keys are:
+Instanse: {'date': '2020-08-27T09:40:00-04:00'}
+Required key 'type' is missing, the required keys are: 
 ['date', 'type']
 
 ================================
@@ -140,6 +149,7 @@ Validate 'e2d760c3-7e10-4464-ab22-7fda6b5e2562.json'
 ERRORS:
 ---------------
 'bad user id' is not of type 'integer'
+Instanse: bad user id
 Invalid data type in key 'user_id', data type expected 'integer'
 
 ================================
