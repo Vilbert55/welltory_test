@@ -14,8 +14,7 @@ class JsonValidator:
         instance = ""
         value = error.validator_value
         if error.instance:
-            instance_text = str(error.instance)
-            instnse_fr = instance_text[:100] if len(instance_text) > 100 else instance_text
+            instnse_fr = str(error.instance)[:100]
             instance = f"Instanse: {instnse_fr}\n"
         if error.validator == "type":
             key = " ".join(list(error.path))
